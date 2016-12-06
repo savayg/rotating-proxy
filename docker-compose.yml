@@ -1,0 +1,10 @@
+version: '2'
+services:
+  rotating-proxy:
+    build: .
+    command: /usr/local/bin/start.rb
+    ports:
+      - '5566:5566'
+      - '1936:4444'
+    environment:
+      - tors=10

@@ -107,7 +107,7 @@ module Service
 	"--ExitRelay 0",
 	"--RefuseUnknownExits 0",
 	"--ClientOnly 1",
-	"--AllowSingleHopCircuits 1",
+	"--AllowSingleHopCircuits 0",
         "--DataDirectory #{data_directory}",
         "--PidFile #{pid_file}",
         "--Log \"warn syslog\"",
@@ -275,6 +275,6 @@ loop do
     proxy.restart unless proxy.working?
   end
 
-  $logger.info "sleeping for 60 seconds"
-  sleep 60
+  $logger.info "sleeping for 5 min"
+  sleep 300
 end
